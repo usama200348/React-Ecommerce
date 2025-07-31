@@ -11,13 +11,14 @@ const Login = () => {
     e.preventDefault(); 
     console.log("Hello World Login");
 
-    login({ email, password })
+    login({email, password })
       .then(() => {
         alert("User Logged In Successfully");
         navigate('/home');
       })
       .catch((error) => {
-        console.log("Error Logging Using Firebase: " + error);
+        const error_message = error.message;
+        console.log("Error Logging Using Firebase: " + error_message);
       });
   };
 

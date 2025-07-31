@@ -6,6 +6,7 @@ import Layout from './Layout/Layout.jsx';
 import Login from './Component/Login/Login.jsx';
 import Signup from './Component/Pages/SignUp/Signup.jsx';
 import Home from './Component/Pages/Home/Home.jsx';
+import AdPost from './Component/Pages/AdPost/AdPost.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path:'home',
         element:<Home/>
+      },
+      {
+        path:'/AdPost',
+        element:<AdPost/>
       }
     ]
   }

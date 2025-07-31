@@ -21,7 +21,8 @@ const confirmValue = document.getElementById('Cpassword').value;
     
     .then(()=>{
       alert("User Registered Successfully");  
-      navigate('/');
+      
+      ('/');
     }).catch((error)=>{
       console.log("Error In Firbase Registration" + error);
     })

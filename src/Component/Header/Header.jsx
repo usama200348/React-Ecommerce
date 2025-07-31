@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Header = () => {
+
+const Header = () => {  
   return (
     <>
     
@@ -10,7 +12,7 @@ const Header = () => {
     <a className="btn btn-ghost text-xl">KStore</a>
   </div>
   <div className="flex-none">
-  
+  <Link className='btn btn-success' to={'/AdPost'}>Add Post</Link>
   </div>
 </div>    
     </>
