@@ -16,6 +16,7 @@ const Login = () => {
         alert("User Logged In Successfully");
         navigate('/home');
       })
+      
       .catch((error) => {
         const error_message = error.message;
         console.log("Error Logging Using Firebase: " + error_message);

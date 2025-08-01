@@ -5,10 +5,9 @@ const auth = getAuth(app);
 //functionality of login user
 const login = ({email,password})=>{
     return signInWithEmailAndPassword(auth,email,password)   
-    if(!email || !password){
-        alert("Email Password Are Required");
-    } 
+    
 }
+
 
 const signup =({email,password,name,date})=>{
     return createUserWithEmailAndPassword(auth,email,password,name,date)
