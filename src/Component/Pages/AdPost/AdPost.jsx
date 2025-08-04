@@ -18,7 +18,7 @@ const AdPost = () => {
   return (
     <>
     <div>
-     <div className='flex flex-col gap-2 items-center'>
+     <div className='flex flex-col gap-2 items-center'> 
       {/*Meta Field For Title  */} 
         <fieldset className="fieldset">
   <legend className="fieldset-legend text-[20px]">Title</legend>

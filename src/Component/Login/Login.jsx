@@ -14,7 +14,7 @@ const Login = () => {
     login({email, password })
       .then(() => {
         alert("User Logged In Successfully");
-        navigate('/home');
+          navigate('/home');
       })
       
       .catch((error) => {
