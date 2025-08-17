@@ -25,7 +25,6 @@ const router = createBrowserRouter([
       },
       {
         path:'home',
-        //Protect Routes Can't Reached To This Page Until User Logged In
         element:<ProtectedRoutes><Home/></ProtectedRoutes> 
          },
       {

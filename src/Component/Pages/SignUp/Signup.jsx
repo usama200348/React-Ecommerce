@@ -13,16 +13,18 @@ const Signup = () => {
     const passwordValue = document.getElementById('password').value;
 const confirmValue = document.getElementById('Cpassword').value;
     console.log("Hello World From Sign Up");
-    if (!passwordValue == confirmValue) {
-      alert("Password Not Match Work");
-    }
+  if (passwordValue !== confirmValue) {
+  alert("Passwords do not match");
+  return; // stop execution
+}
+
  e.preventDefault();
     signup({email,password})
     
     .then(()=>{
       alert("User Registered Successfully");  
       
-      ('/');
+     navigate ('/');
     }).catch((error)=>{
       console.log("Error In Firbase Registration" + error);
     })

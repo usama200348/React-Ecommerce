@@ -5,7 +5,7 @@ import { login } from '../../Firebase/FIrebaseMethod';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); // You had it commented out
+  const navigate = useNavigate(); 
 
   const Login_user = (e) => {
     e.preventDefault(); 

@@ -1,25 +1,34 @@
-import { onAuthStateChanged } from 'firebase/auth'
-import React, { useEffect, useState } from 'react'   
-import { auth } from '../Firebase/FIrebaseMethod'
-import { useNavigate } from 'react-router-dom'
+import { onAuthStateChanged } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
+import { auth } from '../Firebase/FIrebaseMethod';
+import { Navigate } from 'react-router-dom';
 
-const ProtectedRoutes = ({component}) => {
-    const [loading,setLoading]=useState(null);
-    useEffect(()=>{
-        onAuthStateChanged(auth,(user)=>{
-            if (user) {
-                const uid = user.uid;
-                console.log("Uid" + uid);
-                setLoading(false);
-            }else{
-                navigate('/')
-            }
-        });
-    },[])
-    const navigate = useNavigate();
-    return(
-        loading ? <h1>Loading...</h1> : component
-    )
-}
+const ProtectedRoutes = ({ children }) => {
+  const [loading, setLoading] = useState(true);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
 
-export default ProtectedRoutes
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserLoggedIn(true);
+      } else {
+        setUserLoggedIn(false);
+      }
+      setLoading(false);
+    });
+
+    return () => unsubscribe(); 
+  }, []);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (!userLoggedIn) {
+    return <Navigate to="/"/>;
+  }
+
+  return children;
+};
+
+export default ProtectedRoutes;
